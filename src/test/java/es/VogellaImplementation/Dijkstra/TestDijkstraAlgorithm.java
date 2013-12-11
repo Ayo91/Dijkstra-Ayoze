@@ -14,8 +14,49 @@ public class TestDijkstraAlgorithm {
 	  private List<Edge> edges;
 
 	  
+	  /*
+	   *Comprobación de que los vertices del grafo se crean correctamente
+	   */
+	  @Test
+	  public void testGrafoVertices() {
+		//nodos
+	    nodes = new ArrayList<Vertex>();
+	    for (int i = 0; i < 3; i++) {
+	      Vertex location = new Vertex("Node_" + i, "Node_" + i);
+	      nodes.add(location);
+	    }
+
+	    // Grafo
+	    Graph graph = new Graph(nodes, null);
+	    
+	    assertEquals(graph.getVertexes().size(), 3);
+	    assertEquals(graph.getVertexes().get(1).getId(), "Node_1");
+	  }
 	  
 	  
+	  /*
+	   *Comprobación de que las aristas del grafo se crean correctamente
+	   */
+	  @Test
+	  public void testGrafoAristas() {
+		//nodos
+	    nodes = new ArrayList<Vertex>();
+	    for (int i = 0; i < 3; i++) {
+	      Vertex location = new Vertex("Node_" + i, "Node_" + i);
+	      nodes.add(location);
+	    }
+	    //Aristas
+	    edges = new ArrayList<Edge>();
+	    addLane("Arco_0", 0, 1, 85);
+	    addLane("Arco_1", 0, 2, 217);
+	    addLane("Arco_2", 1, 2, 173);
+
+	    // Grafo
+	    Graph graph = new Graph(nodes, edges);
+	    
+	    assertEquals(graph.getEdges().size(), 3);
+	    assertEquals(graph.getEdges().get(2).getId(),"Arco_2");
+	  }
 	  
 	  
 	  /*
