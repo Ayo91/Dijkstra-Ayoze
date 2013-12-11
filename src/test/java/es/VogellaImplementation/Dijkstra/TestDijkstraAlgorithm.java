@@ -14,6 +14,13 @@ public class TestDijkstraAlgorithm {
 	  private List<Edge> edges;
 
 	  
+	  
+	  
+	  
+	  
+	  /*
+	   * Prueba desarrollada por el autor de la correcta ejecucion del algoritmo.
+	   */
 	  @Test
 	  public void testExcute() {
 	    nodes = new ArrayList<Vertex>();
@@ -43,17 +50,44 @@ public class TestDijkstraAlgorithm {
 	    LinkedList<Vertex> path = dijkstra.getPath(nodes.get(10));
 	    
 	    assertNotNull(path);
-	    assertTrue(path.size() > 0);
-	    
-	    for (Vertex vertex : path) {
-	      System.out.println(vertex);
-	    }
-	    
+	    assertTrue(path.size() > 0);	    
 	  }
+	  
+	  
+	  /*
+	   * Prueba desarrollada por mi. Ejemplo obtenido de: http://www.youtube.com/watch?v=VENf0GXRd6E
+	   */
+	  @Test
+	  public void test1Funcionamieno() {
+	    nodes = new ArrayList<Vertex>();
+	    edges = new ArrayList<Edge>();
+	    for (int i = 1; i <= 6; i++) {
+	      Vertex location = new Vertex("Node_" + i, "Node_" + i);
+	      nodes.add(location);
+	    }
+	    int i = 1;
+	    addLane("Edge_0", 1-i, 2-i, 2);
+	    addLane("Edge_1", 1-i, 3-i, 1);
+	    addLane("Edge_2", 2-i, 4-i, 1);
+	    addLane("Edge_3", 3-i, 4-i, 3);
+	    addLane("Edge_4", 3-i, 5-i, 4);
+	    addLane("Edge_5", 5-i, 6-i, 2);
+	    addLane("Edge_6", 4-i, 6-i, 2);
+
+	    // Lets check from location Loc_1 to Loc_10
+	    Graph graph = new Graph(nodes, edges);
+	    DijkstraAlgorithm dijkstra = new DijkstraAlgorithm(graph);
+	    dijkstra.execute(nodes.get(0));
+	    LinkedList<Vertex> path = dijkstra.getPath(nodes.get(6-1));
+	    	    
+	    //Resultado final
+	    assertNotNull(path);
+	    assertEquals("[Node_1, Node_2, Node_4, Node_6]",path.toString());
+	  }  
+	    
 	  private void addLane(String laneId, int sourceLocNo, int destLocNo,
 	      int duration) {
 	    Edge lane = new Edge(laneId,nodes.get(sourceLocNo), nodes.get(destLocNo), duration);
 	    edges.add(lane);
 	  }
-	  
 } 
