@@ -22,4 +22,11 @@
       	<scope>test</scope>
     </dependency>
   </dependencies>
+  
+  <reports>
+    <report>maven-cobertura-plugin</report>
+    <artifactId>cobertura-maven-plugin</artifactId>
+	<version>2.6</version>
+  </reports>
+  
 </project>

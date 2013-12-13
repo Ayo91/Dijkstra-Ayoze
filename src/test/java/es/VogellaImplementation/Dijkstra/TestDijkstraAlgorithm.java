@@ -12,7 +12,6 @@ import org.junit.Test;
 public class TestDijkstraAlgorithm {
 	  private List<Vertex> nodes;
 	  private List<Edge> edges;
-
 	  
 	  /*
 	   *Comprobación de que los vertices del grafo se crean correctamente
