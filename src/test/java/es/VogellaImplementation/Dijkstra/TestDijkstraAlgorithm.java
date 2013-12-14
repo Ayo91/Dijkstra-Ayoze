@@ -8,14 +8,14 @@ import java.util.List;
 
 import org.junit.Test;
 
-/*
+/**
  * Tests para probar la correcta implementación del algoritmo.
  */
 public class TestDijkstraAlgorithm {
 	  private List<Vertex> nodes;
 	  private List<Edge> edges;
 	  
-	  /*
+	  /**
 	   *Comprobación de que los vertices del grafo se crean correctamente
 	   */
 	  @Test
@@ -35,7 +35,7 @@ public class TestDijkstraAlgorithm {
 	  }
 	  
 	  
-	  /*
+	  /**
 	   *Comprobación de que las aristas del grafo se crean correctamente
 	   */
 	  @Test
@@ -60,7 +60,7 @@ public class TestDijkstraAlgorithm {
 	  }
 	  
 	  
-	  /*
+	  /**
 	   * Prueba desarrollada por el autor de la correcta ejecucion del algoritmo.
 	   */
 	  @Test
@@ -96,7 +96,7 @@ public class TestDijkstraAlgorithm {
 	  }
 	  
 	  
-	  /*
+	  /**
 	   * Prueba desarrollada por mi. Ejemplo obtenido de: http://www.youtube.com/watch?v=VENf0GXRd6E
 	   */
 	  @Test

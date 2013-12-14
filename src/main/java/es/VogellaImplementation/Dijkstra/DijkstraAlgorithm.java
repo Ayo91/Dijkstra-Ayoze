@@ -9,7 +9,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/*
+/**
  * http://www.vogella.com/articles/JavaAlgorithmsDijkstra/article.html
  * Esta clase representa la ejecución del algorimo. Utiliza una serie de clases que hemos definido
  * en otros ficheros.
@@ -22,7 +22,7 @@ public class DijkstraAlgorithm {
 	  private Map<Vertex, Vertex> predecessors;
 	  private Map<Vertex, Integer> distance;
 
-	  /*
+	  /**
 	   * Define los nodos y arcos que va utilizar el algoritmo a partir de un objeto Graph: que es un grafo
 	   */
 	  public DijkstraAlgorithm(Graph graph) {
@@ -31,7 +31,7 @@ public class DijkstraAlgorithm {
 	    this.edges = new ArrayList<Edge>(graph.getEdges());
 	  }
 
-	  /*
+	  /**
 	   * Ejecucion del algoritmo. Itera hasta que hayan nodos no marcados.
 	   */
 	  public void execute(Vertex source) {
@@ -113,7 +113,7 @@ public class DijkstraAlgorithm {
 	    }
 	  }
 
-	  /*
+	  /**
 	  *Devuelve el camino desde el nodo origen hasta el nodo final. Null si el nodo no existe. 
 	  */
 	  public LinkedList<Vertex> getPath(Vertex target) {
