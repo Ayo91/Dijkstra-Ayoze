@@ -2,6 +2,11 @@ package es.VogellaImplementation.Dijkstra;
 
 import java.util.List;
 
+/**
+ * Representa un grafo. Esta formado por aristas y vertices.
+ * 
+ *
+ */
 public class Graph {
 	  private final List<Vertex> vertexes;
 	  private final List<Edge> edges;

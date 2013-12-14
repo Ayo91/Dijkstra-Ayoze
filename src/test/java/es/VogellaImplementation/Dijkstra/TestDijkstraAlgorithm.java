@@ -8,7 +8,9 @@ import java.util.List;
 
 import org.junit.Test;
 
-
+/*
+ * Tests para probar la correcta implementación del algoritmo.
+ */
 public class TestDijkstraAlgorithm {
 	  private List<Vertex> nodes;
 	  private List<Edge> edges;

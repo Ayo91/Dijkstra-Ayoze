@@ -1,5 +1,9 @@
 package es.VogellaImplementation.Dijkstra;
 
+/*
+ * Esta clase representan los vertices de un grafo. Vertices que va a uitlizar el algoritmo.
+ * Tiene dos atributos principales: id y nombre.
+ */
 public class Vertex {
 	  final private String id;
 	  final private String name;

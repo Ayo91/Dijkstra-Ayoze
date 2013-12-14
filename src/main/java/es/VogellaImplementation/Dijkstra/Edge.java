@@ -1,5 +1,9 @@
 package es.VogellaImplementation.Dijkstra;
 
+/*
+ * Esta clase representa las aristas. Tienen varios atributos como un identificador, nodo de origen, nodo 
+ * destino y un peso asociado que nos va a ayudar a determinar los nodos y aristas mas bondadosos.
+ */
 public class Edge  {
 	  private final String id; 
 	  private final Vertex source;

@@ -11,6 +11,8 @@ import java.util.Set;
 
 /*
  * http://www.vogella.com/articles/JavaAlgorithmsDijkstra/article.html
+ * Esta clase representa la ejecución del algorimo. Utiliza una serie de clases que hemos definido
+ * en otros ficheros.
  */
 public class DijkstraAlgorithm {
 	  private final List<Vertex> nodes;
@@ -20,12 +22,18 @@ public class DijkstraAlgorithm {
 	  private Map<Vertex, Vertex> predecessors;
 	  private Map<Vertex, Integer> distance;
 
+	  /*
+	   * Define los nodos y arcos que va utilizar el algoritmo a partir de un objeto Graph: que es un grafo
+	   */
 	  public DijkstraAlgorithm(Graph graph) {
 	    // create a copy of the array so that we can operate on this array
 	    this.nodes = new ArrayList<Vertex>(graph.getVertexes());
 	    this.edges = new ArrayList<Edge>(graph.getEdges());
 	  }
 
+	  /*
+	   * Ejecucion del algoritmo. Itera hasta que hayan nodos no marcados.
+	   */
 	  public void execute(Vertex source) {
 	    settledNodes = new HashSet<Vertex>();
 	    unSettledNodes = new HashSet<Vertex>();
@@ -41,6 +49,7 @@ public class DijkstraAlgorithm {
 	    }
 	  }
 
+	  
 	  private void findMinimalDistances(Vertex node) {
 	    List<Vertex> adjacentNodes = getNeighbors(node);
 	    for (Vertex target : adjacentNodes) {
@@ -65,6 +74,7 @@ public class DijkstraAlgorithm {
 	    throw new RuntimeException("Should not happen");
 	  }
 
+	  
 	  private List<Vertex> getNeighbors(Vertex node) {
 	    List<Vertex> neighbors = new ArrayList<Vertex>();
 	    for (Edge edge : edges) {
@@ -104,9 +114,8 @@ public class DijkstraAlgorithm {
 	  }
 
 	  /*
-	   * This method returns the path from the source to the selected target and
-	   * NULL if no path exists
-	   */
+	  *Devuelve el camino desde el nodo origen hasta el nodo final. Null si el nodo no existe. 
+	  */
 	  public LinkedList<Vertex> getPath(Vertex target) {
 	    LinkedList<Vertex> path = new LinkedList<Vertex>();
 	    Vertex step = target;
